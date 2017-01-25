@@ -24,7 +24,13 @@ namespace MainViewApplication.Presenter
 
         private void InitializeViewModel()
         {
+            InitializeBridgeHue();
+        }
 
+        private void InitializeBridgeHue()
+        {
+            //Récuperation de toutes les ampoules
+            var bridge = Hue.HueBridgeLocator.Locate();
         }
 
         public UserControl GetView()

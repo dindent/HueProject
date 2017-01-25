@@ -6,7 +6,7 @@
         public string type { get; set; }
         public string name { get; set; }
         public string modelid { get; set; }
-        public long swversion { get; set; }
+        public string swversion { get; set; }
 
         public static HueLight Parse(dynamic d)
         {
@@ -15,7 +15,7 @@
             instance.type = d["type"];
             instance.name = d["name"];
             instance.modelid = d["modelid"];
-            instance.swversion = long.Parse(d["swversion"]);
+            instance.swversion = d["swversion"];
             return instance;
         }
     }

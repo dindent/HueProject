@@ -19,7 +19,7 @@ namespace Hue
         {
             //https://www.meethue.com/api/nupnp
             //return LocateAsync().Result;
-            return new HueBridge("192.168.0.102");
+            return new HueBridge("192.168.1.25");
         }
 
         public static async Task<HueBridge> LocateAsync()
