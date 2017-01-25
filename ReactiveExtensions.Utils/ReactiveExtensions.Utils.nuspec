@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <metadata>
+    <id>ReactiveExtensions.Utils</id>
+    <version>##version##</version>
+    <title>Sogitec - Reactive Extensions</title>
+    <authors>Sogitec Industries</authors>
+    <owners>Sogitec Industries</owners>
+    <projectUrl>https://ssog-tfs/tfs/DefaultCollection/IOS/_welcome#name=IOS&amp;path=%2FREADME.md&amp;_a=view</projectUrl>
+    <iconUrl>http://activites/sites/affsimu2/simavi/15E5B5/EspLoTa/LotInstr/Espace%20Architecture/IcoSogiteciOS.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Sogitec - Reactive Extensions</description>
+    <releaseNotes>See ReleaseNote</releaseNotes>
+    <copyright>Copyright Sogitec 2016</copyright>
+    <tags>Sogitec Tools, Reactive Extensions</tags>
+    <dependencies>
+      <group>
+        <dependency id="Ix-Main" version="1.2.5" />
+        <dependency id="Rx-Core" version="2.2.5" />
+        <dependency id="Rx-Interfaces" version="2.2.5" />
+        <dependency id="Rx-Linq" version="2.2.5" />
+        <dependency id="Rx-Main" version="2.2.5" />
+        <dependency id="Rx-PlatformServices" version="2.2.5" />
+        <dependency id="Rx-WPF" version="2.2.5" />
+        <dependency id="Rx-XAML" version="2.2.5" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\..\_Exec\VS12.0\Win32\Release\ReactiveExtensions.Utils.dll" target="lib\net451" />
+  </files>
+</package>
