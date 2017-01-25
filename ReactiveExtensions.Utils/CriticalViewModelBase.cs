@@ -1,9 +1,8 @@
 ﻿using ReactiveExtensions.Utils.Interfaces;
-using Sogitec.IOS.Wpf.Utils.ViewModels;
 
 namespace ReactiveExtensions.Utils
 {
-    public abstract class CriticalViewModelBase : ViewModelBase, ICriticalPropertyUpdate
+    public abstract class CriticalViewModelBase : ICriticalPropertyUpdate
     {
         private bool isUpdating;
 

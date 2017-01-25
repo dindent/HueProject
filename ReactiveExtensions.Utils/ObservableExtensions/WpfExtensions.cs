@@ -8,10 +8,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reactive;
 using System.Reactive.Linq;
-// ReSharper disable once RedundantUsingDirective
-using ReactiveExtensions.Utils.Interfaces;
 using Utils;
-
 
 namespace ReactiveExtensions.Utils.ObservableExtensions
 {

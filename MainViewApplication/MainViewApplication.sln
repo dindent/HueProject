@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hue", "..\Hue\Hue.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactiveExtensions.Utils", "..\ReactiveExtensions.Utils\ReactiveExtensions.Utils.csproj", "{FDD78681-F711-4F3D-866F-639DF0EF5D68}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tools", "Utils\Tools.csproj", "{8D8D494A-1721-4BD7-BBBC-D67D44B11B60}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +67,18 @@ Global
 		{FDD78681-F711-4F3D-866F-639DF0EF5D68}.Release|x64.Build.0 = Release|x64
 		{FDD78681-F711-4F3D-866F-639DF0EF5D68}.Release|x86.ActiveCfg = Release|Win32
 		{FDD78681-F711-4F3D-866F-639DF0EF5D68}.Release|x86.Build.0 = Release|Win32
+		{8D8D494A-1721-4BD7-BBBC-D67D44B11B60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D8D494A-1721-4BD7-BBBC-D67D44B11B60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D8D494A-1721-4BD7-BBBC-D67D44B11B60}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8D8D494A-1721-4BD7-BBBC-D67D44B11B60}.Debug|x64.Build.0 = Debug|Any CPU
+		{8D8D494A-1721-4BD7-BBBC-D67D44B11B60}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8D8D494A-1721-4BD7-BBBC-D67D44B11B60}.Debug|x86.Build.0 = Debug|Any CPU
+		{8D8D494A-1721-4BD7-BBBC-D67D44B11B60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D8D494A-1721-4BD7-BBBC-D67D44B11B60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D8D494A-1721-4BD7-BBBC-D67D44B11B60}.Release|x64.ActiveCfg = Release|Any CPU
+		{8D8D494A-1721-4BD7-BBBC-D67D44B11B60}.Release|x64.Build.0 = Release|Any CPU
+		{8D8D494A-1721-4BD7-BBBC-D67D44B11B60}.Release|x86.ActiveCfg = Release|Any CPU
+		{8D8D494A-1721-4BD7-BBBC-D67D44B11B60}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
