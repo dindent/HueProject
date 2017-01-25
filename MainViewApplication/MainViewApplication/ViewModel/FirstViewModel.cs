@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Services
+namespace MainViewApplication.ViewModel
 {
-    public class SSDPBridgeLocator
+    public class FirstViewModel
     {
     }
 }
