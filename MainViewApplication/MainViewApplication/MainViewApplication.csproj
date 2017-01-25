@@ -76,6 +76,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\LightsModel.cs" />
     <Compile Include="Presenter\FirstViewPresenter.cs" />
     <Compile Include="ViewModel\FirstViewModel.cs" />
     <Compile Include="View\FirstView.xaml.cs">
@@ -134,6 +135,10 @@
     <ProjectReference Include="..\..\Option\Option.csproj">
       <Project>{a0f1811c-415d-4ee6-a48f-1315e7dbf232}</Project>
       <Name>Option</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utils\Tools.csproj">
+      <Project>{8d8d494a-1721-4bd7-bbbc-d67d44b11b60}</Project>
+      <Name>Tools</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

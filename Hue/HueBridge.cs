@@ -17,12 +17,12 @@ namespace Hue
 
         public event EventHandler PushButtonOnBridge;
 
-        public readonly string IP; 
+        public readonly string IP;
 
         private readonly string appname = "winhueapp";
         private Timer timer;
         private bool IsAuthenticated = false;
-        
+
         public HueBridge(string ip)
         {
             Urls = new UrlProvider(ip);
@@ -46,7 +46,7 @@ namespace Hue
         private void StatusCheckEvent(object state)
         {
             // read state of lamps
-            if (IsAuthenticated) 
+            if (IsAuthenticated)
                 TryUpdateLights();
         }
 
@@ -73,7 +73,7 @@ namespace Hue
             var jss = new JavaScriptSerializer();
             var d = jss.Deserialize<dynamic>(json);
             var lights = d["lights"];
-            
+
             Lights = new ConcurrentDictionary<string, HueLight>();
             foreach (var light in lights)
             {
@@ -113,7 +113,7 @@ namespace Hue
                     {
                         Settings.Default.BridgeApiKey = key;
                         Settings.Default.Save();
-                    
+
                         IsAuthenticated = true;
                         return true;
                     }
@@ -134,7 +134,7 @@ namespace Hue
             if (Lights != null && IsAuthenticated)
             {
                 foreach (var light in Lights)
-                     SetLightStatus(light.Key, "{\"alert\": \"select\" }");
+                    SetLightStatus(light.Key, "{\"alert\": \"select\" }");
             }
         }
 
@@ -151,6 +151,33 @@ namespace Hue
                 {
                     SetLightStatus(light.Key, "{\"bri\": 0, \"on\": true }");
                 }
+            }
+        }
+
+        public void TurnOnLights()
+        {
+            if (Lights != null && IsAuthenticated)
+            {
+                foreach (var light in Lights)
+                {
+                    SetLightStatus(light.Key, "{\"bri\": 254, \"on\": true }");
+                }
+            }
+        }
+
+        public void TurnOnLights(string Key)
+        {
+            if (!string.IsNullOrEmpty(Key) && IsAuthenticated)
+            {
+                SetLightStatus(Key, "{\"bri\": 254, \"on\": true }");
+            }
+        }
+
+        public void TurnOffLights(string Key)
+        {
+            if (!string.IsNullOrEmpty(Key) && IsAuthenticated)
+            {
+                SetLightStatus(Key, "{\"on\": false }");
             }
         }
 

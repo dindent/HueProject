@@ -1,32 +1,37 @@
 ﻿using Hue.Contracts;
-using MainViewApplication.Models;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Utils;
 
-namespace MainViewApplication.ViewModel
+namespace MainViewApplication.Models
 {
-    public class FirstViewModel : PropertyChangedBase
+    public class LightsModel : PropertyChangedBase
     {
-        private ObservableCollection<LightsModel> lights;
 
-        public ObservableCollection<LightsModel> Lights
+        public LightsModel(HueLight light, string id)
+        {
+            Light = light;
+            IdHueLight = id;
+        }
+
+        private string idHueLight;
+        public string IdHueLight
         {
             get
             {
-                return lights;
+                return idHueLight;
             }
 
             set
             {
-                lights = value;
+                idHueLight = value;
                 OnPropertyChanged();
             }
         }
+
 
         private RelayCommand switchHueLight;
         public RelayCommand SwitchHueLight
@@ -42,5 +47,22 @@ namespace MainViewApplication.ViewModel
                 OnPropertyChanged();
             }
         }
+
+        private HueLight light;
+        public HueLight Light
+        {
+            get
+            {
+                return light;
+            }
+
+            set
+            {
+                light = value;
+                OnPropertyChanged();
+            }
+        }
+
+
     }
 }
