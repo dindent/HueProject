@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Utils;
 
 namespace MainViewApplication.Models
@@ -33,8 +34,8 @@ namespace MainViewApplication.Models
         }
 
 
-        private RelayCommand switchHueLight;
-        public RelayCommand SwitchHueLight
+        private ICommand switchHueLight;
+        public ICommand SwitchHueLight
         {
             get
             {

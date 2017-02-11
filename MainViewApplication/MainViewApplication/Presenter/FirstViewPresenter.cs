@@ -41,7 +41,7 @@ namespace MainViewApplication.Presenter
             foreach (var light in bridge.Lights)
             {
                 LightsModel l = new LightsModel(light.Value, light.Key);
-                l.SwitchHueLight = new RelayCommand(_ => SwitchHueLight(light.Key));
+                //l.SwitchHueLight = new RelayCommand(_ => SwitchHueLight(light.Key));
                 viewModel.Lights.Add(l);
             }
 

@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Utils;
 
 namespace MainViewApplication.ViewModel
@@ -28,8 +29,8 @@ namespace MainViewApplication.ViewModel
             }
         }
 
-        private RelayCommand switchHueLight;
-        public RelayCommand SwitchHueLight
+        private ICommand switchHueLight;
+        public ICommand SwitchHueLight
         {
             get
             {
