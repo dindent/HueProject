@@ -4,8 +4,8 @@
     "debugType": "portable"
   },
   "dependencies": {
-    "Option":"1.0.0",
-    "Utils":"1.0.0",
+    "Option":{"target":"project"},
+    "Utils":{"target":"project"},
     "System.Reactive": "3.1.1",
     "System.Reactive.Core": "3.1.1",
     "System.Reactive.Interfaces": "3.1.1",
