@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 
 namespace Option.Extensions
 {
@@ -37,7 +38,7 @@ namespace Option.Extensions
 
         public static Option<TValue> As<TValue>(this object value)
         {
-            if (value != null && typeof(TValue).IsAssignableFrom(value.GetType()))
+            if (value != null && typeof(TValue).GetTypeInfo().IsAssignableFrom(value.GetType()))
             {
                 return Option.FromValue((TValue)value);
             }
