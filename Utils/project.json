@@ -3,12 +3,9 @@
   "buildOptions": {
     "debugType": "portable"
   },
-  "dependencies": {
-    "System.Linq.Parallel": "4.3.0"
-  },
+  "dependencies": {},
   "frameworks": {
     "netstandard1.6": {
-      "imports": "dnxcore50",
       "dependencies": {
         "NETStandard.Library": "1.6.1"
       }

@@ -1,10 +1,20 @@
-{
+{/*
   "version": "1.0.0-*",
   "buildOptions": {
     "debugType": "portable",
     "emitEntryPoint": true
   },
-  "dependencies": {},
+  "runtimes": {
+    "osx.10.10-x64": {}
+  },
+  "library": {
+    "Option": {
+      "target": "project"
+    },
+    "ReactiveExtensions.Utils": {
+      "target": "project"
+    }
+  },
   "frameworks": {
     "netcoreapp1.1": {
       "dependencies": {
@@ -15,5 +25,10 @@
       },
       "imports": "dnxcore50"
     }
-  }
+  }*/
+  "projects":[
+    "Option",
+    "Utils",
+    "ReactiveExtensions.Utils"
+  ]
 }

@@ -1,15 +1,12 @@
 using System;
 using System.Diagnostics;
 using System.Reactive;
-using System.Reflection;
-using log4net;
 
 namespace ReactiveExtensions.Utils.Subjects
 {
     public class DebugSubject<T> : IObservable<T>
     {
         private readonly Action<Action, NotificationKind> debugAction;
-        private readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         private readonly IObservable<T> parent;
 
         public DebugSubject(IObservable<T> parent, Action<Action, NotificationKind> debugAction = null)
@@ -32,7 +29,7 @@ namespace ReactiveExtensions.Utils.Subjects
             stopWatch.Start();
             action();
             stopWatch.Stop();
-            log.InfoFormat("Action {0} took {1} ms", actionType, stopWatch.ElapsedMilliseconds);
+            System.Console.WriteLine("Action {0} took {1} ms", actionType, stopWatch.ElapsedMilliseconds);
         }
     }
 }

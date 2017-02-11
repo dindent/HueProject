@@ -8,6 +8,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reactive;
 using System.Reactive.Linq;
+using System.Reflection;
 using Utils;
 
 namespace ReactiveExtensions.Utils.ObservableExtensions
@@ -161,7 +162,7 @@ namespace ReactiveExtensions.Utils.ObservableExtensions
             return Observable.FromEventPattern<PropertyChangedEventHandler, PropertyChangedEventArgs>(
                 h => viewModel.PropertyChanged += h,
                 h => viewModel.PropertyChanged -= h)
-                .Select(pattern => new { pattern, property = viewModel.GetType().GetProperty(pattern.EventArgs.PropertyName) })
+                .Select(pattern => new { pattern, property = viewModel.GetType().GetTypeInfo().GetProperty(pattern.EventArgs.PropertyName) })
                 .Where(obj => obj.property != null)
                 .Select(
                     obj =>
@@ -226,8 +227,8 @@ namespace ReactiveExtensions.Utils.ObservableExtensions
             return collection.ObserveCollection().Where(args => args.Action == NotifyCollectionChangedAction.Move)
                 .SelectMany(args => args.NewItems.ToObservable<TValue>());
         }
-
-        public static IObservable<ListChangedEventArgs> ObserveCollection<TValue>(this BindingList<TValue> collection)
+/*
+        public static IObservable<System.Collections.ObjectModel.ListChangedEventArgs> ObserveCollection<TValue>(this System.Collections.ObjectModel.BindingList<TValue> collection)
         {
             return Observable.FromEventPattern<ListChangedEventHandler, ListChangedEventArgs>(
                 h => collection.ListChanged += h,
@@ -235,10 +236,11 @@ namespace ReactiveExtensions.Utils.ObservableExtensions
                 .Select(args => args.EventArgs);
         }
 
-        public static IObservable<TValue> WhenAdded<TValue>(this BindingList<TValue> collection)
+        public static IObservable<TValue> WhenAdded<TValue>(this System.Collections.Specialized.BindingList<TValue> collection)
         {
+            //System.Collections.ObjectModel.BindingList<string> p;
             return collection.ObserveCollection().Where(args => args.ListChangedType == ListChangedType.ItemAdded)
                 .Select(args => collection[args.NewIndex]);
-        }
+        } */
     }
 }

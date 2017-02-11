@@ -14,10 +14,10 @@ namespace ReactiveExtensions.Utils.Schedulers
 
         public ReactiveSchedulers()
         {
-            dispatcher = new ReactiveScheduler(DispatcherScheduler.Current);
+            //dispatcher = new ReactiveScheduler(DispatcherScheduler.Current);
             taskScheduler = new ReactiveScheduler(TaskPoolScheduler.Default);
             immediateScheduler = ImmediateScheduler.Instance;
-            threadPoolScheduler = new ReactiveScheduler(ThreadPoolScheduler.Instance);
+            //threadPoolScheduler = new ReactiveScheduler(ThreadPoolScheduler.Instance);
             newThreadScheduler = new ReactiveScheduler(NewThreadScheduler.Default);
             defaultScheduler = DefaultScheduler.Instance;
             currentThreadScheduler = CurrentThreadScheduler.Instance;

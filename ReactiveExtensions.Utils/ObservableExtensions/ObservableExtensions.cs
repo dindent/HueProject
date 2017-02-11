@@ -1,11 +1,8 @@
-﻿using log4net.Core;
-using System;
+﻿using System;
 using System.Reactive;
 using System.Reactive.Concurrency;
 using System.Reactive.Linq;
 using System.Reactive.Subjects;
-using System.Reflection;
-using log4net;
 using ReactiveExtensions.Utils.Subjects;
 
 namespace ReactiveExtensions.Utils.ObservableExtensions
@@ -68,16 +65,6 @@ namespace ReactiveExtensions.Utils.ObservableExtensions
             return observable.SampleFirst(Observable.Timer(DateTimeOffset.Now, sampleInterval));
         }
 
-        public static IObservable<T> Log<T>(this IObservable<T> source, ILogger logger, Level level, string name)
-        {
-            Action<string, object, Exception> trace = 
-                (state, value, exception) => logger.Log(MethodBase.GetCurrentMethod().DeclaringType, level, string.Format("{0}: {1}({2})", name, state, value), exception);
-            return source
-                .Do(v => 
-                    trace("OnNext", v, null), 
-                    exception => trace("OnError", "", exception),
-                    () => trace("OnCompleted", "", null));
-        }
 
         /// <summary>
         /// Gives a mean to easily debug observer calls (OnNExt, OnCompleted, OnError).
